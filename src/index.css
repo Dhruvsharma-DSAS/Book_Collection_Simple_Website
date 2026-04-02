@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&family=Oleo+Script:wght@400;700&family=JetBrains+Mono&display=swap');
+
+@theme {
+  --color-brand-cream: #FDF8F0;
+  --color-brand-beige: #F2E8D5;
+  --color-brand-brown: #8B5E3C;
+  --color-brand-green: #2D6A4F;
+  --color-brand-gold: #D4A017;
+  --color-brand-night-bg: #0D1117;
+  --color-brand-night-card: #161B22;
+  --color-brand-night-glow: #1F6FEB;
+
+  --font-heading: "Pacifico", cursive;
+  --font-body: "Nunito", sans-serif;
+  --font-accent: "Oleo Script", cursive;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  --shadow-warm: 0 4px 6px -1px rgba(139, 94, 60, 0.1), 0 2px 4px -1px rgba(139, 94, 60, 0.06);
+  --shadow-premium: 0 0 24px rgba(212, 160, 23, 0.35);
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-brown font-body transition-colors duration-500 selection:bg-brand-gold selection:text-white overflow-x-hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  .btn {
+    @apply relative px-6 py-3 rounded-[24px] font-bold transition-all active:scale-95 flex items-center justify-center gap-2;
+  }
+
+  .btn-primary {
+    @apply bg-brand-green text-white hover:shadow-premium hover:-translate-y-1;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-brand-brown/20 text-brand-brown hover:bg-brand-brown/5 hover:border-brand-brown/40;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-cream;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-brown/20 rounded-full hover:bg-brand-brown/40;
+}
+
+/* Dark mode overrides using CSS standard */
+@media (prefers-color-scheme: dark) {
+  /* This would be for system dark mode, but we use .dark class */
+}
+
+.dark body {
+  @apply bg-brand-night-bg text-gray-200;
+}
+
+.dark .glass {
+  @apply bg-brand-night-card/50 border-white/5;
+}
+
+/* Remove default Vite highlight pink error overlay once fixed */
+#vite-error-overlay { display: none !important; }
