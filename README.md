@@ -1,5 +1,7 @@
 # EyePagE – GOD-LEVEL React Experience 🚀
 
+**Live Site:** [https://book-collection-simple-website.vercel.app/](https://book-collection-simple-website.vercel.app/)
+
 Welcome to the newly overhauled **EyePagE v3.0**. What started as a beautiful static project has now been transformed into a "Product Experience" inspired by the likes of Duolingo, Apple, and Notion.
 
 ---
