@@ -92,11 +92,13 @@ const Home = () => {
         {/* Right Column: 3D and Mascot */}
         <div className="w-full lg:w-1/2 h-[500px] lg:h-[700px] relative mt-12 lg:mt-0 flex items-center justify-center">
           <div className="absolute inset-0 z-10">
-            <Canvas camera={{ position: [0, 0, 10], fov: 40 }} shadows>
+            <Canvas camera={{ position: [0, 0, 10], fov: 40 }} shadows gl={{ alpha: true }} style={{ background: 'transparent' }}>
               <ambientLight intensity={1.2} />
               <pointLight position={[10, 10, 10]} intensity={1.5} castShadow />
               <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={1} castShadow />
-              <Book3D />
+              <React.Suspense fallback={null}>
+                <Book3D />
+              </React.Suspense>
             </Canvas>
           </div>
 

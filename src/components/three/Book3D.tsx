@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
-import { Float, MeshReflectorMaterial, Text, PerspectiveCamera } from '@react-three/drei'
+import { Float, Text } from '@react-three/drei'
 import * as THREE from 'three'
 
 export const Book3D = () => {
@@ -70,23 +70,12 @@ export const Book3D = () => {
         </mesh>
       </Float>
 
-      {/* Subtle Reflector Ground for Premium Look */}
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]}>
+      {/* Simple shadow ground plane instead of reflector */}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3.5, 0]} receiveShadow>
         <planeGeometry args={[20, 20]} />
-        <MeshReflectorMaterial
-          blur={[300, 100]}
-          resolution={1024}
-          mixBlur={1.5}
-          mixStrength={60}
-          roughness={1}
-          depthScale={1.2}
-          minDepthThreshold={0.4}
-          maxDepthThreshold={1.4}
-          color="#050505"
-          metalness={0.5}
-          mirror={0.8}
-        />
+        <shadowMaterial opacity={0.15} />
       </mesh>
     </group>
   )
 }
+

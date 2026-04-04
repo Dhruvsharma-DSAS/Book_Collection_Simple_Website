@@ -71,7 +71,7 @@ const Categories = () => {
               <Link to={`/categories/${genre.id}`}>
                 <div className="h-full glass p-10 rounded-[40px] border-b-8 border-brand-green/20 dark:border-brand-gold/20 flex flex-col items-center text-center transition-all group hover:bg-brand-green/5 dark:hover:bg-brand-gold/5">
                   <div className={`mb-8 p-6 rounded-3xl bg-brand-green/10 dark:bg-brand-gold/10 ${genre.color} group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
-                    {React.cloneElement(genre.icon as React.ReactElement, { size: 48, strokeWidth: 2.5 })}
+                    {React.cloneElement(genre.icon as React.ReactElement<any>, { size: 48, strokeWidth: 2.5 })}
                   </div>
                   <h3 className="text-3xl font-heading text-brand-brown dark:text-white mb-4 tracking-tighter">{genre.name}</h3>
                   <p className="text-lg font-bold text-brand-brown/50 dark:text-gray-500 leading-tight mb-8">{genre.desc}</p>
