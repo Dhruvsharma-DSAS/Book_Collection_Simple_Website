@@ -71,13 +71,15 @@ const About = () => {
           />
       </div>
 
-      <div className="mt-48 py-24 px-12 bg-brand-green/5 dark:bg-brand-gold/5 rounded-[60px] border border-brand-green/10 dark:border-brand-gold/10 overflow-hidden relative flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-32 text-center lg:text-left">
+      <div className="mt-48 py-24 px-12 bg-brand-green/5 dark:bg-brand-gold/5 rounded-[60px] border border-brand-green/10 dark:border-brand-gold/10 overflow-visible relative flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-32 text-center lg:text-left">
           <div className="flex-1">
               <h2 className="text-5xl md:text-8xl font-heading text-brand-brown dark:text-white mb-8 relative z-10 leading-tight">Welcome to <br className="hidden lg:block"/> the Crew</h2>
-              <p className="text-2xl font-bold text-brand-brown/40 dark:text-gray-500">Your journey as a visionary reader begins now.</p>
+              <p className="text-2xl font-bold text-brand-brown/70 dark:text-gray-400">Your journey as a visionary reader begins now.</p>
           </div>
-          <div className="flex-1 flex justify-center scale-125 lg:scale-150">
-            <Paige expression="happy" isNight={isNight} />
+          <div className="flex-1 flex justify-center">
+            <div className="scale-125 lg:scale-150 origin-center">
+              <Paige expression="happy" isNight={isNight} forceSpeech={true} />
+            </div>
           </div>
       </div>
     </div>

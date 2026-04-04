@@ -92,19 +92,19 @@ const Paige = ({ expression = 'idle', isNight = false, forceSpeech = false }: Ma
                 damping: 25,
                 opacity: { duration: 0.2 } 
             }}
-            className="absolute -top-28 left-1/2 -translate-x-1/2 bg-white dark:bg-brand-night-card shadow-premium px-6 py-4 rounded-[24px] min-w-[200px] border-b-4 border-brand-green/10 z-20"
+            className="absolute -top-32 left-1/2 -translate-x-1/2 bg-white dark:bg-brand-night-card shadow-premium px-6 py-4 rounded-[24px] min-w-[200px] max-w-[260px] border-b-4 border-brand-gold/20 dark:border-brand-gold/30 z-30"
           >
             <motion.p 
                 key={msgIndex}
                 initial={{ opacity: 0, y: -4 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.25 }}
-                className="font-bold text-sm text-brand-brown dark:text-brand-gold font-body leading-tight text-center"
+                className="font-bold text-sm text-brand-brown dark:text-brand-gold font-body leading-tight text-center whitespace-nowrap"
             >
               {MESSAGES[msgIndex]}
             </motion.p>
             {/* Tail */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-brand-night-card rotate-45 border-r-2 border-b-2 border-brand-green/5"></div>
+            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-brand-night-card rotate-45 border-r-2 border-b-2 border-brand-gold/10"></div>
           </motion.div>
         )}
       </AnimatePresence>
